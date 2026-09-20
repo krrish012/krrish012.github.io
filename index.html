@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krrish Katira</title>
+<meta name="description" content="Portfolio of Krrish Ajay Katira, B.Tech Computer Science (Cybersecurity) student at VIT-AP University, focused on network defense, operational intelligence frameworks, and full-stack development.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background scanline / grid overlay, purely decorative -->
+<div class="bg-overlay" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Back to top">
+      <span class="nav-logo-bracket">&lt;</span>KAK<span class="nav-logo-bracket">/&gt;</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#status" class="nav-link">System</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="https://github.com/krrish012/" class="nav-link nav-link-resume" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="hero">
+    <canvas class="hero-canvas" id="matrixCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content" id="heroContent">
+
+      <div class="terminal" id="heroTerminal">
+        <div class="term-header">
+          <span class="term-title">root@kk-portfolio:~$</span>
+          <div class="term-controls">
+            <span class="dot dot-a"></span>
+            <span class="dot dot-b"></span>
+            <span class="dot dot-c"></span>
+          </div>
+        </div>
+
+        <div class="term-body" id="termBody">
+          <p class="term-line"><span class="term-prompt">&gt;</span> <span class="term-cmd" data-type="whoami"></span></p>
+          <p class="term-line term-out" data-out="Krrish Katira"></p>
+          <p class="term-line"><span class="term-prompt">&gt;</span> <span class="term-cmd" data-type="cat role.txt"></span></p>
+          <p class="term-line term-out" data-out="B.Tech CSE (Cybersecurity) — VIT-AP University"></p>
+          <p class="term-line"><span class="term-prompt">&gt;</span> <span class="term-cmd" data-type="cat focus.txt"></span></p>
+          <p class="term-line term-out" data-out="network defense :: intel frameworks :: full-stack dev"></p>
+          <p class="term-line term-out" data-out="type 'help' below to poke around ↓" id="termBootHint"></p>
+        </div>
+
+        <form class="term-input-row" id="termForm">
+          <span class="term-prompt" aria-hidden="true">&gt;</span>
+          <input type="text" class="term-input" id="termInput" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input — try whoami, skills, help or clear" placeholder="type a command…">
+        </form>
+      </div>
+
+      <a href="about.html" style="text-decoration: none; color: inherit; display: inline-block;">
+        <h1 class="hero-name scramble" data-text="MR. KRRISH KATIRA">MR. KRRISH KATIRA</h1>
+      </a>
+      <p class="hero-headline">B.Tech Computer Science (Cybersecurity) Student at VIT-AP University.</p>
+      <p class="hero-tagline">Focused on network defense, operational intelligence frameworks, and full-stack software development.</p>
+
+      <a href="#projects" class="hero-scroll-cue" aria-label="Scroll to projects">
+        <span class="cue-line"></span>
+        <span class="cue-label">scroll</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <p class="section-kicker">01 — Toolset</p>
+      <h2 class="section-heading scramble" data-text="Skills">Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal-up">
+          <h3 class="skill-card-title">Programming Languages</h3>
+          <ul class="tag-list">
+            <li class="tag">Python</li>
+            <li class="tag">Java</li>
+            <li class="tag">JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal-up">
+          <h3 class="skill-card-title">Cybersecurity &amp; OSINT</h3>
+          <ul class="tag-list">
+            <li class="tag">Wireshark</li>
+            <li class="tag">Metasploit</li>
+            <li class="tag">BeEF</li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal-up">
+          <h3 class="skill-card-title">Systems &amp; Environments</h3>
+          <ul class="tag-list">
+            <li class="tag">Kali Linux</li>
+            <li class="tag">Windows 11</li>
+            <li class="tag">Android</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SYSTEM STATUS ============ -->
+  <section class="status" id="status">
+    <div class="section-inner">
+      <p class="section-kicker">02 — Live systems</p>
+      <h2 class="section-heading scramble" data-text="System Status">System Status</h2>
+
+      <div class="status-grid">
+
+        <div class="widget widget-activity reveal-up">
+          <div class="widget-head">
+            <h3 class="widget-title">Recent Activity</h3>
+            <span class="widget-live-dot" aria-hidden="true"></span>
+          </div>
+          <div class="contrib-grid" id="contribGrid" role="img" aria-label="Simulated recent coding activity, most weeks showing light to heavy commit density"></div>
+          <div class="contrib-legend">
+            <span>less</span>
+            <span class="contrib-swatch lvl-0"></span>
+            <span class="contrib-swatch lvl-1"></span>
+            <span class="contrib-swatch lvl-2"></span>
+            <span class="contrib-swatch lvl-3"></span>
+            <span class="contrib-swatch lvl-4"></span>
+            <span>more</span>
+          </div>
+        </div>
+
+        <div class="widget widget-clock reveal-up">
+          <div class="widget-head">
+            <h3 class="widget-title">Live Status</h3>
+            <span class="widget-live-dot" aria-hidden="true"></span>
+          </div>
+          <p class="widget-clock-time" id="widgetClock">00:00:00</p>
+          <p class="widget-clock-date" id="widgetDate">—</p>
+          <ul class="widget-meta">
+            <li><span>Environment</span><span id="clientOs">Detecting...</span></li>
+            <li><span>System Memory</span><span id="clientRam">Detecting...</span></li>
+          </ul>
+        </div>
+
+        <div class="widget widget-session reveal-up">
+          <div class="widget-head">
+            <h3 class="widget-title">Session</h3>
+            <span class="widget-live-dot" aria-hidden="true"></span>
+          </div>
+          <p class="widget-uptime-label">Uptime this session</p>
+          <p class="widget-uptime" id="widgetUptime">00:00:00</p>
+          <ul class="widget-meta">
+          <li><span>Threat monitor</span><span class="widget-status-ok">Nominal</span></li>
+          <li><span>Connection</span><span id="clientMode" class="widget-status-ok">Detecting...</span></li>
+        </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="section-kicker">03 — Selected work</p>
+      <h2 class="section-heading scramble" data-text="Projects">Projects</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal-up">
+          <div class="project-media project-media-svg" aria-hidden="true">
+            <svg viewBox="0 0 200 120" class="project-svg" preserveAspectRatio="xMidYMid meet">
+              <circle cx="100" cy="82" r="4" class="svg-node svg-node-hot"/>
+              <path class="svg-arc svg-arc-a" d="M76 82a24 24 0 0 1 48 0" fill="none"/>
+              <path class="svg-arc svg-arc-b" d="M58 82a42 42 0 0 1 84 0" fill="none"/>
+              <path class="svg-arc svg-arc-c" d="M40 82a60 60 0 0 1 120 0" fill="none"/>
+              <line x1="100" y1="82" x2="140" y2="46" class="svg-line"/>
+              <circle cx="140" cy="46" r="3.2" class="svg-node"/>
+              <path d="M133 46l4.5 4.5 8-9" class="svg-check" fill="none"/>
+            </svg>
+          </div>
+          <div class="project-card-head">
+            <h3 class="project-title">WiFi Guard</h3>
+            <span class="project-tag">Python · Automation</span>
+          </div>
+          <p class="project-desc">A packaged Python automation tool built to streamline and automate campus hostel network authentication.</p>
+        </article>
+
+        <article class="project-card reveal-up">
+          <div class="project-media project-media-svg" aria-hidden="true">
+            <svg viewBox="0 0 200 120" class="project-svg" preserveAspectRatio="xMidYMid meet">
+              <ellipse cx="70" cy="38" rx="26" ry="9" class="svg-cyl-top"/>
+              <path d="M44 38v34a26 9 0 0 0 52 0V38" class="svg-cyl-body" fill="none"/>
+              <ellipse cx="70" cy="72" rx="26" ry="9" class="svg-cyl-ring"/>
+              <ellipse cx="70" cy="55" rx="26" ry="9" class="svg-cyl-ring svg-cyl-ring-dim"/>
+              <g class="svg-book">
+                <rect x="120" y="34" width="36" height="46" rx="2" class="svg-book-cover" fill="none"/>
+                <line x1="138" y1="34" x2="138" y2="80" class="svg-book-spine"/>
+                <line x1="126" y1="46" x2="134" y2="46" class="svg-book-line"/>
+                <line x1="126" y1="56" x2="134" y2="56" class="svg-book-line"/>
+                <line x1="126" y1="66" x2="134" y2="66" class="svg-book-line"/>
+              </g>
+              <line x1="96" y1="55" x2="118" y2="55" class="svg-line"/>
+            </svg>
+          </div>
+          <div class="project-card-head">
+            <h3 class="project-title">Bookstore Inventory Management System</h3>
+            <span class="project-tag">Python GUI · MySQL</span>
+          </div>
+          <p class="project-desc">A full-stack application architected with a Python graphical user interface and a MySQL database backend.</p>
+        </article>
+
+        <article class="project-card reveal-up">
+          <div class="project-media project-media-img" aria-hidden="true">
+            <img src="halo-render.jpg" alt="H.A.L.O hardware — Arduino Mega environmental monitoring rig, processed in a duotone glow to match the site theme" loading="lazy">
+          </div>
+          <div class="project-card-head">
+            <h3 class="project-title">H.A.L.O</h3>
+            <span class="project-tag">Arduino Mega · Sensors</span>
+          </div>
+          <p class="project-desc">A collaborative hardware engineering project featuring an environmental monitoring apparatus built with an Arduino Mega and integrated sensor arrays.</p>
+        </article>
+
+        <article class="project-card reveal-up">
+          <div class="project-media project-media-svg" aria-hidden="true">
+            <svg viewBox="0 0 200 120" class="project-svg" preserveAspectRatio="xMidYMid meet">
+              <line x1="46" y1="80" x2="82" y2="46" class="svg-topo-line"/>
+              <line x1="82" y1="46" x2="126" y2="60" class="svg-topo-line"/>
+              <line x1="82" y1="46" x2="70" y2="90" class="svg-topo-line"/>
+              <line x1="126" y1="60" x2="156" y2="34" class="svg-topo-line"/>
+              <line x1="126" y1="60" x2="150" y2="88" class="svg-topo-line"/>
+              <circle cx="46" cy="80" r="3.4" class="svg-node"/>
+              <circle cx="70" cy="90" r="3.4" class="svg-node"/>
+              <circle cx="126" cy="60" r="3.4" class="svg-node"/>
+              <circle cx="156" cy="34" r="3.4" class="svg-node"/>
+              <circle cx="150" cy="88" r="3.4" class="svg-node"/>
+              <path d="M82 30a14 14 0 0 1 14 14c0 9 -14 22 -14 22s-14 -13 -14 -22a14 14 0 0 1 14 -14z" class="svg-pin"/>
+              <circle cx="82" cy="44" r="4.5" class="svg-pin-dot"/>
+            </svg>
+          </div>
+          <div class="project-card-head">
+            <h3 class="project-title">Campus Activity Map</h3>
+            <span class="project-tag">Hackathon build</span>
+          </div>
+          <p class="project-desc">Built a spatial mapping web application under a strict hackathon time limit to plot campus events in real-time, integrating a dynamic user interface with a centralized activity database.</p>
+        </article>
+
+        <article class="project-card project-card-wide reveal-up">
+          <div class="project-media project-media-svg" aria-hidden="true">
+            <svg viewBox="0 0 400 100" class="project-svg" preserveAspectRatio="xMidYMid meet">
+              <rect x="16" y="18" width="368" height="64" rx="8" class="svg-scan-frame" fill="none"/>
+              <line x1="16" y1="34" x2="384" y2="34" class="svg-scan-header"/>
+              <circle cx="30" cy="26" r="2" class="svg-dot-dim"/>
+              <circle cx="38" cy="26" r="2" class="svg-dot-dim"/>
+              <circle cx="46" cy="26" r="2" class="svg-dot-dim"/>
+              <g class="svg-ports">
+                <rect x="60" y="50" width="8" height="24" class="svg-port"/>
+                <rect x="76" y="46" width="8" height="28" class="svg-port"/>
+                <rect x="92" y="54" width="8" height="20" class="svg-port"/>
+                <rect x="108" y="42" width="8" height="32" class="svg-port svg-port-open"/>
+                <rect x="124" y="52" width="8" height="22" class="svg-port"/>
+                <rect x="140" y="48" width="8" height="26" class="svg-port"/>
+              </g>
+              <line x1="170" y1="50" x2="230" y2="50" class="svg-line"/>
+              <g class="svg-lock">
+                <rect x="230" y="46" width="26" height="20" rx="3" class="svg-lock-body" fill="none"/>
+                <path d="M236 46v-7a7 7 0 0 1 14 0v7" class="svg-lock-shackle" fill="none"/>
+                <circle cx="243" cy="56" r="2.4" class="svg-node-hot"/>
+              </g>
+              <line x1="262" y1="56" x2="280" y2="56" class="svg-line"/>
+              <g class="svg-hash">
+                <circle cx="300" cy="50" r="4" class="svg-node"/>
+                <circle cx="320" cy="42" r="4" class="svg-node"/>
+                <circle cx="320" cy="62" r="4" class="svg-node"/>
+                <circle cx="340" cy="50" r="4" class="svg-node svg-node-hot"/>
+                <line x1="300" y1="50" x2="320" y2="42" class="svg-topo-line"/>
+                <line x1="300" y1="50" x2="320" y2="62" class="svg-topo-line"/>
+                <line x1="320" y1="42" x2="340" y2="50" class="svg-topo-line"/>
+                <line x1="320" y1="62" x2="340" y2="50" class="svg-topo-line"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-card-head">
+            <h3 class="project-title">Offensive Security Toolkit</h3>
+            <span class="project-tag">Network · Cryptography</span>
+          </div>
+          <ul class="project-sublist">
+            <li>Developed a network utility to probe a target IP's ports and identify active services for vulnerability assessment.</li>
+            <li>Engineered a cryptographic testing tool capable of breaking standard hashes using dictionary and brute-force techniques.</li>
+            <li>Built a credential-verification script that interfaces with public breach databases to alert users of compromised passwords.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="section-kicker">04 — Secure channel</p>
+      <h2 class="section-heading scramble" data-text="Initiate Handshake">Initiate Handshake</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="contact-sub">Open to internships, CTFs, and collaborative builds. Standard protocols accepted.</p>
+          
+          <div class="contact-links reveal-up">
+            <a href="mailto:krrishkatira1@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+              <div class="link-meta">
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-sys">protocol_SMTP</span>
+              </div>
+              <span class="contact-link-arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/krrish012/" class="contact-link" target="_blank" rel="noopener">
+              <div class="link-meta">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-sys">repo_access</span>
+              </div>
+              <span class="contact-link-arrow">&rarr;</span>
+            </a>
+            <a href="https://www.linkedin.com/in/krrishkatira" class="contact-link" target="_blank" rel="noopener">
+              <div class="link-meta">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-sys">network_uplink</span>
+              </div>
+              <span class="contact-link-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right reveal-up">
+          <div class="pgp-block">
+            <div class="pgp-header">
+              <span class="pgp-title">Identity Verification</span>
+              <span class="widget-live-dot" aria-hidden="true"></span>
+            </div>
+            <div class="pgp-body">
+              <p class="pgp-line">Key Fingerprint:</p>
+              <p class="pgp-code">4A5B 8891 3C22 F109<br>900A 11C4 D56F 7890</p>
+              <ul class="widget-meta">
+                <li><span>Status</span><span class="widget-status-ok">Active</span></li>
+                <li><span>Encryption</span><span>RSA-4096</span></li>
+              </ul>
+              
+              <div class="radar-container" aria-hidden="true">
+                <svg viewBox="0 0 200 80" class="radar-svg" preserveAspectRatio="xMidYMid slice">
+                  <line x1="0" y1="40" x2="200" y2="40" class="radar-axis"/>
+                  <line x1="100" y1="0" x2="100" y2="80" class="radar-axis"/>
+                  <circle cx="100" cy="40" r="10" class="radar-ring r1"/>
+                  <circle cx="100" cy="40" r="30" class="radar-ring r2"/>
+                  <circle cx="100" cy="40" r="60" class="radar-ring r3"/>
+                  <circle cx="130" cy="25" r="2.5" class="svg-node-hot"/>
+                  <circle cx="50" cy="55" r="2" class="svg-node"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Krrish Katira. Built with copious amounts of coffee, HTML, CSS &amp; JS.</p>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/detectincognitojs@1/dist/detectIncognito.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

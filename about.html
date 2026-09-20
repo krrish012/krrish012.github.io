@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About | Krrish Katira</title>
+<meta name="description" content="About Krrish Katira, presented as an interactive desktop environment.">
+<meta name="theme-color" content="#05080b">
+
+<!-- Fonts (same as main portfolio) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<!-- Wallpaper: low-poly facets are painted on this canvas by about.js -->
+<canvas id="wallpaper" aria-hidden="true"></canvas>
+<div class="wall-fx" aria-hidden="true"></div>
+
+<!-- ============ DESKTOP ============ -->
+<main class="desktop" id="desktop" aria-label="Desktop">
+  <nav class="desktop-icons" aria-label="Desktop files">
+
+    <button class="d-icon" type="button" data-app="profile" data-title="sys_profile.txt">
+      <span class="d-tile">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9"/></svg>
+      </span>
+      <span class="d-label">sys_<wbr>profile.txt</span>
+    </button>
+
+    <button class="d-icon" type="button" data-app="desc" data-title="about_me.txt">
+      <span class="d-tile">
+        <!-- Document icon to replace the terminal icon -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="20" height="24" rx="2"/><path d="M10 12h12M10 16h12M10 20h8"/></svg>
+      </span>
+      <span class="d-label">about_<wbr>me.txt</span>
+    </button>
+
+    <button class="d-icon" type="button" data-app="physical" data-title="physical_layer.dat">
+      <span class="d-tile">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13v6M7 10v12M25 10v12M29 13v6M7 16h18"/></svg>
+      </span>
+      <span class="d-label">physical_<wbr>layer.dat</span>
+    </button>
+
+    <button class="d-icon" type="button" data-app="media" data-title="media_archive.exe">
+      <span class="d-tile">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10h14a6 6 0 0 1 5.8 7.5l-1.3 5a3 3 0 0 1-5 1.3L19 21h-6l-3.5 2.8a3 3 0 0 1-5-1.3l-1.3-5A6 6 0 0 1 9 10z"/><path d="M10 14v4M8 16h4M21.5 15h.01M24 17.5h.01"/></svg>
+      </span>
+      <span class="d-label">media_<wbr>archive.exe</span>
+    </button>
+
+    <button class="d-icon" type="button" data-app="comms" data-title="project_mantis.log">
+      <span class="d-tile">
+        <!-- Kept the terminal icon, but updated the label -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h22v15H14l-6 5v-5H5z"/><path d="M10 13h12M10 17h7"/></svg>
+      </span>
+      <span class="d-label">project_<wbr>mantis.log</span>
+    </button>
+
+    <a class="d-icon d-icon-exit" href="index.html">
+      <span class="d-tile">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 6H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6"/><path d="M12 16h15M22 11l5 5-5 5"/></svg>
+      </span>
+      <span class="d-label">Return to Main Terminal</span>
+    </a>
+
+  </nav>
+</main>
+
+<!-- Open windows live here -->
+<div id="windows" aria-live="polite"></div>
+
+<!-- ============ START MENU ============ -->
+<div class="start-menu" id="startMenu" aria-hidden="true">
+  <p class="start-head">krrish@krrish</p>
+  <ul class="start-list" id="startList"></ul>
+  <a class="start-exit" href="index.html">
+    <svg viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 6H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6"/><path d="M12 16h15M22 11l5 5-5 5"/></svg>
+    Return to Main Terminal
+  </a>
+</div>
+
+<!-- ============ TASKBAR ============ -->
+<footer class="taskbar" id="taskbar">
+  <button class="start-btn" id="startBtn" type="button" aria-label="Open start menu" aria-expanded="false" aria-controls="startMenu">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>
+    <span>Start</span>
+  </button>
+
+  <div class="task-items" id="taskItems" role="toolbar" aria-label="Open windows"></div>
+
+  <div class="clock" aria-live="off">
+    <span class="clock-time" id="clockTime">--:--:--</span>
+    <span class="clock-date" id="clockDate">---</span>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     WINDOW CONTENT TEMPLATES (cloned by about.js)
+     ===================================================== -->
+
+<!-- 1. sys_profile.txt -->
+<template id="tpl-profile">
+  <p class="prompt">cat sys_profile.txt</p>
+  <h1 class="doc-name">Mr. Krrish Katira</h1>
+  <p class="doc-lede">19-year-old B.Tech Computer Science (Cybersecurity) student at VIT-AP University.</p>
+
+  <dl class="kv">
+    <dt>name</dt><dd>Krrish Katira</dd>
+    <dt>age</dt><dd>19</dd>
+    <dt>program</dt><dd>B.Tech Computer Science, Cybersecurity</dd>
+    <dt>university</dt><dd>VIT-AP University</dd>
+    <dt>focus</dt><dd>network defense, operational intelligence frameworks, full-stack development</dd>
+    <dt>status</dt><dd><span class="dot"></span>online, open to collaborate</dd>
+  </dl>
+
+  <p class="hint">Open the other files on the desktop to see what else is running on this machine.</p>
+</template>
+
+<!-- 2. about_me.txt -->
+<template id="tpl-desc">
+  <p class="prompt">cat about_me.txt</p>
+  <div class="text-doc" style="font-family: var(--font-sans); font-size: 14px; line-height: 1.7; color: #cfd9e2; padding: 4px 8px;">
+    
+    <p style="margin-bottom: 16px;">As a Computer Science professional specializing in cybersecurity, my core focus is on network defense, operational intelligence, and robust software architecture. My technical background is rooted in exploring the mechanics of systems security—leveraging tools like Kali Linux and actively engaging with deep-dive technical communities. I am driven by a dual mandate: engineering secure applications from the ground up and continuously optimizing hardware and digital environments.</p>
+    
+    <p style="margin-bottom: 16px;">I thrive on translating theoretical concepts into functional, real-world utility. Recently, I have architected and deployed full-stack inventory management systems, seamlessly integrating complex databases with intuitive graphical user interfaces, alongside engineering robust platforms that handle end-to-end flight booking logic. Beyond individual development, I help lead technical initiatives within a security-focused hacking chapter, collaborating with peers to deconstruct and neutralize emerging vulnerabilities.</p>
+    
+    <p>Off-screen, my discipline translates into a structured weightlifting routine and playing football. I am an avid traveler with a deep appreciation for historical architecture, always scoping out my next global destination. Whether I am custom-configuring desktop environments, reviving legacy hardware, or winding down with a game, I stay immersed in technology. I am always open to discussing cybersecurity trends, CTFs, or collaborative builds—feel free to initiate a handshake.</p>
+    
+  </div>
+</template>
+
+<!-- 3. physical_layer.dat -->
+<template id="tpl-physical">
+  <p class="prompt">./physical_layer --read</p>
+  <p class="doc-lede">Back under the bar after a two-year hiatus. Rebuilding the base, one session at a time.</p>
+
+  <h2 class="sec">Weekly split</h2>
+  <div class="table-wrap">
+    <table class="data" id="splitTable">
+      <thead><tr><th>Day</th><th>Focus</th><th>Main lifts</th><th class="num">Sets</th></tr></thead>
+      <tbody>
+        <tr data-day="1"><td>Mon</td><td>Push</td><td>Bench, overhead press, dips</td><td class="num">16</td></tr>
+        <tr data-day="2"><td>Tue</td><td>Pull</td><td>Rows, pull-ups, curls</td><td class="num">16</td></tr>
+        <tr data-day="3"><td>Wed</td><td>Legs</td><td>Squat, Romanian deadlift, calves</td><td class="num">18</td></tr>
+        <tr data-day="4" class="rest"><td>Thu</td><td>Rest</td><td>Walk and mobility</td><td class="num">0</td></tr>
+        <tr data-day="5"><td>Fri</td><td>Upper</td><td>Incline press, lat pulldown, lateral raises</td><td class="num">15</td></tr>
+        <tr data-day="6"><td>Sat</td><td>Lower + core</td><td>Deadlift, lunges, planks</td><td class="num">15</td></tr>
+        <tr data-day="0" class="rest"><td>Sun</td><td>Rest</td><td>Full recovery</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec">Nutrition, today</h2>
+  <div class="macro">
+    <div class="macro-row">
+      <span class="macro-name">Calories</span>
+      <div class="bar"><span style="width:78%"></span></div>
+      <span class="macro-val">2,100 / 2,700 kcal</span>
+    </div>
+    <div class="macro-row">
+      <span class="macro-name">Protein</span>
+      <div class="bar bar-green"><span style="width:81%"></span></div>
+      <span class="macro-val">130 / 160 g</span>
+    </div>
+    <div class="macro-row">
+      <span class="macro-name">Carbs</span>
+      <div class="bar"><span style="width:76%"></span></div>
+      <span class="macro-val">260 / 340 g</span>
+    </div>
+    <div class="macro-row">
+      <span class="macro-name">Fat</span>
+      <div class="bar"><span style="width:84%"></span></div>
+      <span class="macro-val">63 / 75 g</span>
+    </div>
+  </div>
+  <p class="hint">Mock data for layout purposes. Targets follow a slight surplus for lean gain.</p>
+</template>
+
+<!-- 4. media_archive.exe -->
+<template id="tpl-media">
+  <p class="prompt">./media_archive --list --updates</p>
+  <p class="doc-lede">Recent installs and the games I'm currently into.</p>
+
+  <div class="games">
+    <article class="game" data-pct="0">
+      <div class="cover cover-wwm" aria-hidden="true"><span>WWM</span></div>
+      <div class="game-info">
+        <h2>Forza Horizon 6</h2>
+        <p class="meta">Arcade, open world racing</p>
+        <div class="bar"><span style="width:0%"></span></div>
+        <p class="status"><span class="status-text">Update queued, 12.4 GB</span><span class="pct">0%</span></p>
+        <button class="btn" type="button" data-update>Run update</button>
+      </div>
+    </article>
+
+    <article class="game" data-pct="62">
+      <div class="cover cover-spidey" aria-hidden="true"><span>SM</span></div>
+      <div class="game-info">
+        <h2>Spider-Man</h2>
+        <p class="meta">Action-adventure</p>
+        <div class="bar"><span style="width:62%"></span></div>
+        <p class="status"><span class="status-text">Update paused, 3.1 GB</span><span class="pct">62%</span></p>
+        <button class="btn" type="button" data-update>Resume update</button>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="sec">Update files</h2>
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>File</th><th>Title</th><th class="num">Size</th></tr></thead>
+      <tbody>
+        <tr><td>val_update.pak</td><td>Valorant</td><td class="num">2.4 GB</td></tr>
+        <tr><td>gtav_patch.bin</td><td>GTA-V</td><td class="num">3.1 GB</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="hint">Progress is simulated. Press the buttons to watch the queue drain.</p>
+</template>
+
+<!-- 5. project_mantis.log -->
+<template id="tpl-comms">
+<div class="term" role="log">
+  <p class="log" style="--i:0"><span class="t">[19:42:01]</span> <span class="lvl">INFO</span>  MANTIS daemon initializing...</p>
+  <p class="log" style="--i:1"><span class="t">[19:42:03]</span> <span class="lvl ok">OK</span>    biomechanical_chassis connected on ttyACM0</p>
+  <p class="log" style="--i:2"><span class="t">[19:42:09]</span> <span class="lvl">WARN</span>  This project is <span class="mask">CLASSIFIED</span></p>
+  <p class="log tr" style="--i:3"><span class="t">[19:42:07]</span> <span class="lvl">DATA</span>  servo_array: 5/5 responsive, max_torque=12Nm</p>
+  <p class="log" style="--i:4"><span class="t">[19:42:09]</span> <span class="lvl">WARN</span>  grip_pressure spike detected <span class="mask">(94%)</span></p>
+  <p class="log" style="--i:5"><span class="t">[19:42:09]</span> <span class="lvl">INFO</span>  triggering tactile feedback dampening routine</p>
+  <p class="log" style="--i:6"><span class="t">[19:42:11]</span> <span class="lvl ok">OK</span>    dampening applied, articulation stabilized</p>
+  <p class="log cursor" style="--i:7"><span class="t">[19:42:12]</span> <span class="lvl">IDLE</span>  awaiting neuromuscular input<span class="caret"></span></p>
+</div>
+</template>
+
+<!-- GSAP is optional: about.js falls back to CSS-free instant transitions if the CDN fails -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="about.js" defer></script>
+</body>
+</html>
