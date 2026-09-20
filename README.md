@@ -9,7 +9,9 @@ portfolio/
 ├── index.html     # markup + content
 ├── style.css       # all styling (design tokens at the top)
 ├── script.js       # nav, typewriter, scramble effect, matrix rain, GSAP animations
-├── CNAME           # only needed if you use a custom domain (see below)
+├── about.html     # about page
+├── about.css       # styling for the about page
+├── about.js       # desktop layout, apps amd GSAP animations
 └── README.md
 ```
 
